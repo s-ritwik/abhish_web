@@ -21,8 +21,7 @@ export const pages = [
   {
     slug: "teaching",
     label: "Teaching",
-    source: "legacy",
-    legacyFile: "teaching.html",
+    source: "react",
     summary: "Courses taught and course content documents.",
   },
   {

@@ -5,6 +5,7 @@ import { getPageBySlug, pages } from "./data/pages.js";
 import HomePage from "./pages/HomePage.jsx";
 import PeoplePage from "./pages/PeoplePage.jsx";
 import ResearchPage from "./pages/ResearchPage.jsx";
+import TeachingPage from "./pages/TeachingPage.jsx";
 
 function getRouteFromHash() {
   const rawHash = window.location.hash.replace(/^#\/?/, "");
@@ -34,6 +35,7 @@ export default function App() {
         {activePage.slug === "home" ? <HomePage /> : null}
         {activePage.slug === "people" ? <PeoplePage /> : null}
         {activePage.slug === "research" ? <ResearchPage /> : null}
+        {activePage.slug === "teaching" ? <TeachingPage /> : null}
         {activePage.source === "legacy" ? (
           <LegacyPage key={activePage.slug} page={activePage} onNavigate={navigate} />
         ) : null}

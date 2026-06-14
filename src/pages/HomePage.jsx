@@ -75,11 +75,13 @@ export default function HomePage() {
       >
         <div className="section-copy">
           <p>{lab.latest}</p>
-          <div className="video-shell">
-            <iframe title="Sabal 20 news clip" src={lab.latestVideo} loading="lazy" />
+          <div className="latest-media">
+            <div className="video-shell">
+              <iframe title="Sabal 20 news clip" src={lab.latestVideo} loading="lazy" />
+            </div>
+            <img className="latest-image" src={publicPath(lab.latestImage)} alt="Sabal 20 unmanned logistic drone" />
           </div>
         </div>
-        <img className="latest-image" src={publicPath(lab.latestImage)} alt="Sabal 20 unmanned logistic drone" />
       </Section>
 
       <Section eyebrow="Gallery" title="Lab Photo Gallery">
