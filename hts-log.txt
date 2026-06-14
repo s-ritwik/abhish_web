@@ -1,0 +1,51 @@
+HTTrack3.49-2+htsswf+htsjava launched on Sun, 14 Jun 2026 15:42:23 at https://home.iitk.ac.in/~abhish/ +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar
+(winhttrack -qwC2%Ps2u1%s%uN0%I0p3DaK0H0%kf2A25000%f#f -F "Mozilla/4.5 (compatible; HTTrack 3.0x; Windows 98)" -%F "<!-- Mirrored from %s%s by HTTrack Website Copier/3.x [XR&CO'2014], %s -->" -%l "en, *" https://home.iitk.ac.in/~abhish/ -O1 "E:\abhish_web" +*.png +*.gif +*.jpg +*.jpeg +*.css +*.js -ad.doubleclick.net/* -mime:application/foobar )
+
+Information, Warnings and Errors reported for this mirror:
+note:	the hts-log.txt file, and hts-cache folder, may contain sensitive information,
+	such as username/password authentication for websites mirrored in this project
+	do not share these files/folders if you want these information to remain private
+
+15:42:35	Warning: 	file not stored in cache due to bogus state (incomplete type with OK (200), size 185): https://home.iitk.ac.in/~abhish/templates/default/img/menu_drop.png
+15:42:35	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?research,25 (from https://home.iitk.ac.in/~abhish/)
+15:42:36	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?ongoing-projects,24 (from https://home.iitk.ac.in/~abhish/)
+15:42:37	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?conference-papers,40 (from https://home.iitk.ac.in/~abhish/)
+15:42:37	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?patents,36 (from https://home.iitk.ac.in/~abhish/)
+15:42:37	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?archived-work,41 (from https://home.iitk.ac.in/~abhish/)
+15:42:38	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?m-tech-ug-and-ra,33 (from https://home.iitk.ac.in/~abhish/)
+15:42:38	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?phd,32 (from https://home.iitk.ac.in/~abhish/)
+15:42:38	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?post-doc,51 (from https://home.iitk.ac.in/~abhish/)
+15:42:38	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?alumni,29 (from https://home.iitk.ac.in/~abhish/)
+15:42:40	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?my-calendar,34 (from https://home.iitk.ac.in/~abhish/)
+15:42:40	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?students,22 (from https://home.iitk.ac.in/~abhish/)
+15:42:40	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?prospective-students,23 (from https://home.iitk.ac.in/~abhish/)
+15:42:40	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?summer-internship,21 (from https://home.iitk.ac.in/~abhish/)
+15:42:41	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?aero-home,17 (from https://home.iitk.ac.in/~abhish/)
+15:42:41	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?iitk-home,20 (from https://home.iitk.ac.in/~abhish/)
+15:42:41	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?endureair-systems-pvt-ltd,48 (from https://home.iitk.ac.in/~abhish/)
+15:42:41	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?linux-and-more,38 (from https://home.iitk.ac.in/~abhish/)
+15:42:41	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?latex-help,18 (from https://home.iitk.ac.in/~abhish/)
+15:42:41	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?american-helicopter-society,19 (from https://home.iitk.ac.in/~abhish/)
+15:42:41	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?endureair-systems-pvt-ltd,50 (from https://home.iitk.ac.in/~abhish/)
+15:42:41	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?first-runner-up-prize-for-best-student-project-in-aero-india-2019,47 (from https://home.iitk.ac.in/~abhish/)
+15:42:41	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?-vibhram-selected-among-top-innovations-for-army-day,46 (from https://home.iitk.ac.in/~abhish/)
+15:44:49	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?namioty,6 (from https://home.iitk.ac.in/~abhish/?sLang=pl)
+15:44:49	Warning: 	Found for https://home.iitk.ac.in/~abhish/?obuwie-gorskie,7
+15:44:49	Warning: 	File has moved from https://home.iitk.ac.in/~abhish/?obuwie-gorskie,7 to http://ntrs.nasa.gov/
+15:44:49	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?niskie-gory,14 (from https://home.iitk.ac.in/~abhish/?sLang=pl)
+15:44:49	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?wysokie-gory,13 (from https://home.iitk.ac.in/~abhish/?sLang=pl)
+15:44:49	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?akcesoria-podroznicze,8 (from https://home.iitk.ac.in/~abhish/?sLang=pl)
+15:44:49	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?nowosc-2,16 (from https://home.iitk.ac.in/~abhish/?sLang=pl)
+15:44:49	Error: 	"Not Found" (404) at link https://home.iitk.ac.in/~abhish/?nowosc-1,15 (from https://home.iitk.ac.in/~abhish/?sLang=pl)
+15:44:49	Warning: 	Retry after error -4 (Connect Error) at link www.iitk.ac.in/aero/abhishek/uploads/Helicopter_design.jpg (from https://home.iitk.ac.in/~abhish/?nasza-oferta,3)
+15:44:52	Warning: 	Retry after error -4 (Connect Error) at link www.iitk.ac.in/aero/abhishek/files/compound-heli.png (from https://home.iitk.ac.in/~abhish/?nasza-oferta,3)
+15:44:54	Warning: 	Retry after error -4 (Connect Error) at link www.iitk.ac.in/aero/abhishek/uploads/MiCAH-flight.jpg (from https://home.iitk.ac.in/~abhish/?nasza-oferta,3)
+15:44:54	Warning: 	Retry after error -4 (Connect Error) at link www.iitk.ac.in/aero/abhishek/uploads/Helicopter_design.jpg (from https://home.iitk.ac.in/~abhish/?nasza-oferta,3)
+15:44:54	Warning: 	Retry after error -4 (Connect Error) at link www.iitk.ac.in/aero/abhishek/files/compound-heli.png (from https://home.iitk.ac.in/~abhish/?nasza-oferta,3)
+15:44:56	Warning: 	Retry after error -4 (Connect Error) at link www.iitk.ac.in/aero/abhishek/uploads/MiCAH-flight.jpg (from https://home.iitk.ac.in/~abhish/?nasza-oferta,3)
+15:44:56	Error: 	"Connect Error" (-4) after 2 retries at link www.iitk.ac.in/aero/abhishek/uploads/Helicopter_design.jpg (from https://home.iitk.ac.in/~abhish/?nasza-oferta,3)
+15:44:56	Error: 	"Connect Error" (-4) after 2 retries at link www.iitk.ac.in/aero/abhishek/files/compound-heli.png (from https://home.iitk.ac.in/~abhish/?nasza-oferta,3)
+15:44:58	Error: 	"Connect Error" (-4) after 2 retries at link www.iitk.ac.in/aero/abhishek/uploads/MiCAH-flight.jpg (from https://home.iitk.ac.in/~abhish/?nasza-oferta,3)
+
+HTTrack Website Copier/3.49-2 mirror complete in 2 minutes 35 seconds : 114 links scanned, 75 files written (4835125 bytes overall) [4986199 bytes received at 32169 bytes/sec], 49793 bytes transferred using HTTP compression in 1 files, ratio 35%, 1.8 requests per connection
+(31 errors, 9 warnings, 0 messages)
