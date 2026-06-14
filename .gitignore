@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.vite/
+.vite-cache-local/
+.env
+.env.*
+*.log
+rendered-site*.png
