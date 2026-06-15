@@ -1,6 +1,6 @@
 import PhotoGallery from "../components/PhotoGallery.jsx";
 import Section from "../components/Section.jsx";
-import { galleryImages, lab, profile, researchInterests } from "../data/siteContent.js";
+import { galleryImages, lab, marqueeImages, profile, researchInterests } from "../data/siteContent.js";
 import { publicPath } from "../utils/publicPath.js";
 import { useState } from "react";
 
@@ -29,10 +29,10 @@ function HeroCopy({ overMedia = false }) {
 
 function LabHeroCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeImage = galleryImages[activeIndex];
+  const activeImage = marqueeImages[activeIndex];
 
   function moveImage(direction) {
-    setActiveIndex((index) => (index + direction + galleryImages.length) % galleryImages.length);
+    setActiveIndex((index) => (index + direction + marqueeImages.length) % marqueeImages.length);
   }
 
   return (
@@ -65,12 +65,12 @@ function LabHeroCarousel() {
 }
 
 function LabHeroMarquee() {
-  const marqueeImages = [...galleryImages, ...galleryImages];
+  const marqueeTrackImages = [...marqueeImages, ...marqueeImages];
 
   return (
     <section className="home-hero marquee-hero">
       <div className="hero-marquee-track" aria-hidden="true">
-        {marqueeImages.map((image, index) => (
+        {marqueeTrackImages.map((image, index) => (
           <img key={`${image.src}-${index}`} src={publicPath(image.src)} alt="" />
         ))}
       </div>

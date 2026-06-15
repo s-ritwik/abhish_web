@@ -28,7 +28,7 @@ export const lab = {
     "The lab works on rotorcraft, VTOL systems, autonomous aerial vehicles, aeromechanics, flight dynamics, and unconventional air vehicle design.",
   latest:
     "Sabal 20 is an unmanned logistic drone with 20 kg payload lifting capacity. The original design study was carried out in the lab at IIT Kanpur and later manufactured and tested by EndureAir Systems Pvt. Ltd.",
-  latestImage: "/assets/images/sabal-20.jpg",
+  latestImage: "/assets/images/marquee/sabal-20.jpg",
   latestVideo: "https://www.youtube.com/embed/TolzhZOXuPk?si=mA91SxMwD2jNDqgw",
 };
 
@@ -45,32 +45,75 @@ export const researchInterests = [
 
 export const galleryImages = [
   {
-    src: "/assets/images/sabal-20.jpg",
+    src: "/assets/images/marquee/sabal-20.jpg",
     alt: "Sabal 20 unmanned logistics drone",
     caption: "Sabal 20 logistics UAV",
   },
   {
-    src: "/assets/images/mav-collage.jpg",
+    src: "/assets/images/marquee/mav-collage.jpg",
     alt: "MAV and UAV collage",
     caption: "MAV/UAV prototypes",
   },
   {
-    src: "/assets/images/tailsitter-hover.jpg",
+    src: "/assets/images/marquee/tailsitter-hover.jpg",
     alt: "Quadrotor biplane tailsitter in hover mode",
     caption: "Biplane tailsitter hover",
   },
   {
-    src: "/assets/images/tailsitter-forward-flight.jpg",
+    src: "/assets/images/marquee/tailsitter-forward-flight.jpg",
     alt: "Quadrotor biplane tailsitter in forward flight mode",
     caption: "Biplane tailsitter forward flight",
   },
   {
-    src: "/assets/images/tiltrotor.jpg",
+    src: "/assets/images/marquee/tiltrotor.jpg",
     alt: "Quadrotor convertiplane prototype",
     caption: "VTOL quadrotor convertiplane",
   },
   {
-    src: "/assets/images/variable-pitch-quadrotor.jpg",
+    src: "/assets/images/marquee/variable-pitch-quadrotor.jpg",
+    alt: "Variable pitch quadrotor prototype",
+    caption: "Variable pitch quadrotor",
+  },
+];
+
+export const marqueeImages = [
+  {
+    src: "/assets/images/marquee/sabal-20.jpg",
+    alt: "Sabal 20 unmanned logistics drone",
+    caption: "Sabal 20 logistics UAV",
+  },
+  {
+    src: "/assets/images/marquee/uav_landing.png",
+    alt: "Autonomous UAV landing experiment",
+    caption: "Autonomous UAV landing",
+  },
+  {
+    src: "/assets/images/marquee/mav-collage.jpg",
+    alt: "MAV and UAV collage",
+    caption: "MAV/UAV prototypes",
+  },
+  {
+    src: "/assets/images/marquee/tailsitter-hover.jpg",
+    alt: "Quadrotor biplane tailsitter in hover mode",
+    caption: "Biplane tailsitter hover",
+  },
+  {
+    src: "/assets/images/marquee/uav_sway.png",
+    alt: "UAV moving deck sway experiment",
+    caption: "Moving-deck landing experiment",
+  },
+  {
+    src: "/assets/images/marquee/tailsitter-forward-flight.jpg",
+    alt: "Quadrotor biplane tailsitter in forward flight mode",
+    caption: "Biplane tailsitter forward flight",
+  },
+  {
+    src: "/assets/images/marquee/tiltrotor.jpg",
+    alt: "Quadrotor convertiplane prototype",
+    caption: "VTOL quadrotor convertiplane",
+  },
+  {
+    src: "/assets/images/marquee/variable-pitch-quadrotor.jpg",
     alt: "Variable pitch quadrotor prototype",
     caption: "Variable pitch quadrotor",
   },
@@ -92,7 +135,7 @@ export const researchProjects = [
     authors: ["Helicopter and VTOL Laboratory"],
     phase: "completed",
     status: "Designed and flight tested",
-    image: "/assets/images/sabal-20.jpg",
+    image: "/assets/images/marquee/sabal-20.jpg",
     summary:
       "A tandem rotor UAV platform developed at IIT Kanpur for payload transport and autonomous stabilization using in-house guidance and control software.",
     details:
@@ -107,7 +150,7 @@ export const researchProjects = [
     authors: ["Helicopter and VTOL Laboratory"],
     phase: "completed",
     status: "Prototype flight tested in hover",
-    image: "/assets/images/tiltrotor.jpg",
+    image: "/assets/images/marquee/tiltrotor.jpg",
     summary:
       "A quadrotor convertiplane with tilting wing-propeller segments intended to improve hover efficiency and support transition to aircraft-like forward flight.",
     details:
@@ -122,7 +165,7 @@ export const researchProjects = [
     authors: ["Helicopter and VTOL Laboratory"],
     phase: "completed",
     status: "Hover and forward-flight configurations",
-    image: "/assets/images/tailsitter-hover.jpg",
+    image: "/assets/images/marquee/tailsitter-hover.jpg",
     summary:
       "A VTOL airplane concept combining variable-pitch quadrotor agility with compact biplane fixed wings for efficient cruise.",
     details:
