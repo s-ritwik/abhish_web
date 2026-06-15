@@ -98,14 +98,18 @@ export default function HomePage() {
 
       <Section eyebrow="Profile" title="About PI" className="two-column-section about-pi-section" id="about-pi">
         <div className="section-copy">
-          <h3>Education</h3>
-          <ul className="clean-list education-list">
-            {profile.education.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ul>
-          <h3>Professional Interest</h3>
-          <p>{profile.professionalInterest}</p>
+          <div className="section-panel education-panel">
+            <h3>Education</h3>
+            <ul className="clean-list">
+              {profile.education.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="professional-interest-block">
+            <h3>Professional Interest</h3>
+            <p>{profile.professionalInterest}</p>
+          </div>
         </div>
         <figure className="pi-profile-card">
           <img src={publicPath(profile.image)} alt={profile.name} />

@@ -468,8 +468,13 @@ button {
   overflow-wrap: break-word;
 }
 
-.education-list {
-  margin-bottom: 24px;
+.education-panel {
+  margin-bottom: 34px;
+  max-width: 76ch;
+}
+
+.professional-interest-block {
+  margin-top: 34px;
 }
 
 .pi-profile-card {
