@@ -71,15 +71,13 @@ button {
 }
 
 .brand {
-  display: grid;
-  gap: 5px;
   color: inherit;
   text-decoration: none;
 }
 
 .brand-kicker {
   color: #7b5417;
-  font-size: 1.08rem;
+  font-size: 1.18rem;
   font-weight: 900;
   letter-spacing: 0;
   text-transform: uppercase;
@@ -294,6 +292,36 @@ button {
 
 .section-copy {
   min-width: 0;
+}
+
+.profile-address {
+  display: grid;
+  gap: 5px;
+  margin: 0 0 22px;
+  color: #3b423d;
+  font-style: normal;
+  font-size: 1.04rem;
+  line-height: 1.55;
+}
+
+.email-line {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  margin-top: 6px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.email-line svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
 }
 
 .section-copy p {
@@ -524,6 +552,13 @@ button {
   line-height: 1.72;
 }
 
+.project-authors {
+  color: #4c554d;
+  font-size: 0.94rem;
+  font-weight: 760;
+  line-height: 1.45;
+}
+
 .project-area {
   color: #7b5417 !important;
   font-size: 0.82rem !important;
@@ -565,8 +600,8 @@ button {
 
 .people-card-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
 .person-card,
@@ -578,18 +613,18 @@ button {
 
 .person-card {
   display: grid;
-  grid-template-columns: 92px minmax(0, 1fr);
-  gap: 14px;
+  grid-template-columns: 160px minmax(0, 1fr);
+  gap: 22px;
   align-items: center;
-  min-height: 124px;
-  padding: 14px;
+  min-height: 206px;
+  padding: 22px;
 }
 
 .person-card img,
 .person-photo-placeholder {
   aspect-ratio: 1;
   border-radius: 8px;
-  width: 92px;
+  width: 160px;
 }
 
 .person-card img {
@@ -608,12 +643,14 @@ button {
 
 .person-card-body {
   display: grid;
-  gap: 7px;
+  gap: 10px;
   min-width: 0;
 }
 
 .person-card-body h3 {
   margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.15;
 }
 
 .person-card-body p,
@@ -764,6 +801,101 @@ button {
 
 .project-resource .empty-value {
   font-size: 0.94rem;
+}
+
+.contact-section {
+  max-width: 760px;
+}
+
+.contact-address {
+  border-left: 4px solid #b88320;
+  padding-left: 18px;
+}
+
+.calendar-shell {
+  border: 1px solid rgba(32, 36, 33, 0.12);
+  border-radius: 8px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.calendar-toolbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 12px;
+  align-items: center;
+  border-bottom: 1px solid rgba(32, 36, 33, 0.1);
+  padding: 14px;
+}
+
+.calendar-toolbar h3 {
+  margin: 0;
+  text-align: center;
+}
+
+.calendar-toolbar button {
+  border: 1px solid rgba(29, 103, 89, 0.28);
+  border-radius: 8px;
+  background: #ffffff;
+  color: #1d6759;
+  cursor: pointer;
+  font-weight: 850;
+  padding: 9px 12px;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+
+.calendar-weekday,
+.calendar-day {
+  min-height: 96px;
+  border-right: 1px solid rgba(32, 36, 33, 0.08);
+  border-bottom: 1px solid rgba(32, 36, 33, 0.08);
+  padding: 10px;
+}
+
+.calendar-weekday {
+  min-height: auto;
+  background: #edf2ed;
+  color: #27312a;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.calendar-day span {
+  color: #25312a;
+  font-weight: 850;
+}
+
+.calendar-day p {
+  border-radius: 6px;
+  margin: 8px 0 0;
+  background: #edf2ed;
+  color: #1d6759;
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.25;
+  padding: 6px;
+}
+
+.event-list {
+  display: grid;
+  gap: 14px;
+}
+
+.event-card {
+  border: 1px solid rgba(32, 36, 33, 0.12);
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 18px;
+}
+
+.event-card h3,
+.event-card p {
+  margin: 0 0 8px;
 }
 
 .content-frame {
@@ -948,12 +1080,14 @@ button {
   }
 
   .person-card {
-    grid-template-columns: 78px minmax(0, 1fr);
+    grid-template-columns: 112px minmax(0, 1fr);
+    min-height: 150px;
+    padding: 16px;
   }
 
   .person-card img,
   .person-photo-placeholder {
-    width: 78px;
+    width: 112px;
   }
 
   .trainee-grid {
@@ -998,6 +1132,16 @@ button {
     font-weight: 900;
     margin-bottom: 3px;
     text-transform: uppercase;
+  }
+
+  .calendar-grid {
+    font-size: 0.88rem;
+  }
+
+  .calendar-weekday,
+  .calendar-day {
+    min-height: 74px;
+    padding: 7px;
   }
 }
 

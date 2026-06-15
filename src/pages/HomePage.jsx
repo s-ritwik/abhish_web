@@ -8,6 +8,15 @@ function scrollToSection(event, id) {
   document.getElementById(id)?.scrollIntoView({ block: "start" });
 }
 
+function EmailIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M4 6h16v12H4z" />
+      <path d="m4 7 8 6 8-6" />
+    </svg>
+  );
+}
+
 export default function HomePage() {
   return (
     <div className="page-stack">
@@ -37,15 +46,20 @@ export default function HomePage() {
       <Section eyebrow="Profile" title="About PI" className="two-column-section" id="about-pi">
         <div className="section-copy">
           <h3>{profile.name}</h3>
-          <p>
-            {profile.title}
-            <br />
-            {profile.department}
-            <br />
-            {profile.institute}
-            <br />
-            {profile.email}, Ph: {profile.phone}
-          </p>
+          <address className="profile-address">
+            <span>{profile.title},</span>
+            <span>{profile.department},</span>
+            <span>{profile.lab},</span>
+            <span>{profile.institute},</span>
+            <span>{profile.address}</span>
+            <span>Tel: {profile.phones[0]}</span>
+            <span>{profile.phones[1]}</span>
+            <span>{profile.phones[2]}</span>
+            <a href={`mailto:${profile.email.replace("(at)", "@")}`} className="email-line">
+              <EmailIcon />
+              {profile.email}
+            </a>
+          </address>
           <h3>Professional Interest</h3>
           <p>{profile.professionalInterest}</p>
         </div>

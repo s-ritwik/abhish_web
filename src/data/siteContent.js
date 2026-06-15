@@ -1,10 +1,17 @@
 export const profile = {
   name: "Dr. Abhishek",
-  title: "Professor",
+  title: "AVM Harjinder Singh, VSM, Chair Professor",
   department: "Department of Aerospace Engineering",
+  lab: "Helicopter and VTOL Laboratory",
   institute: "Indian Institute of Technology Kanpur",
+  address: "Kanpur 208016, India",
   email: "abhish(at)iitk.ac.in",
-  phone: "+91-512-2597515 (O)",
+  phone: "+91 - (0)512 - 6797515 (O)",
+  phones: [
+    "+91 - (0)512 - 6797515 (O)",
+    "+91 - 7318018894 (M)",
+    "+91 - 8765069138 (M)",
+  ],
   image: "/assets/images/abhishek.jpg",
   professionalInterest:
     "A commitment to education through teaching and research in broad areas of rotary wing aeromechanics, Vertical Take Off and Landing systems, autonomous and intelligent rotary wing MAV/UAV platforms, and inverse flight dynamics simulation with applications to experimentation, analysis, and design.",
@@ -82,6 +89,7 @@ export const researchProjects = [
   {
     title: "High Endurance Tandem Rotor UAV",
     area: "Aerial logistics",
+    authors: ["Helicopter and VTOL Laboratory"],
     phase: "completed",
     status: "Designed and flight tested",
     image: "/assets/images/sabal-20.jpg",
@@ -96,6 +104,7 @@ export const researchProjects = [
   {
     title: "High Efficiency VTOL Quadrotor Convertiplane",
     area: "Hybrid VTOL aircraft",
+    authors: ["Helicopter and VTOL Laboratory"],
     phase: "completed",
     status: "Prototype flight tested in hover",
     image: "/assets/images/tiltrotor.jpg",
@@ -110,6 +119,7 @@ export const researchProjects = [
   {
     title: "Biplane Quadrotor Tailsitter",
     area: "Payload delivery UAV",
+    authors: ["Helicopter and VTOL Laboratory"],
     phase: "completed",
     status: "Hover and forward-flight configurations",
     image: "/assets/images/tailsitter-hover.jpg",
@@ -124,6 +134,7 @@ export const researchProjects = [
   {
     title: "Project NAAVIK",
     area: "Autonomous navigation",
+    authors: ["Helicopter and VTOL Laboratory"],
     phase: "ongoing",
     status: "Tested on multiple platforms",
     image: "/assets/images/ruav-iitk.jpg",
@@ -138,6 +149,7 @@ export const researchProjects = [
   {
     title: "RL-Optimised UAV Quadrotor Landing On A Heaving Ship-Deck Emulator With CBF-Safety Filtering",
     area: "Autonomous Landing",
+    authors: ["Ritwik Shankar"],
     phase: "ongoing",
     status: "RL landing policy with CBF safety filtering",
     image: "/assets/images/projects/rl-heave-landing.png",
@@ -155,6 +167,7 @@ export const researchProjects = [
   {
     title: "RL-Optimised UAV Quadrotor Landing On A Moving Ship-Deck Emulator",
     area: "Autonomous Landing",
+    authors: ["Ritwik Shankar"],
     phase: "ongoing",
     status: "PX4-compatible RL landing stack",
     image: "/assets/images/projects/rl-moving-deck-landing.png",
@@ -172,6 +185,7 @@ export const researchProjects = [
   {
     title: "Micro Coaxial Autonomous Heli",
     area: "Micro air vehicles",
+    authors: ["Helicopter and VTOL Laboratory"],
     phase: "ongoing",
     status: "Autonomous hover research",
     image: "/assets/images/micav2.jpg",
@@ -186,6 +200,7 @@ export const researchProjects = [
   {
     title: "Vertical Axis Wind Turbine",
     area: "Wind energy",
+    authors: ["Helicopter and VTOL Laboratory"],
     phase: "ongoing",
     status: "Lab-scale prototype",
     image: "/assets/images/vawt-cad.jpg",
@@ -336,7 +351,11 @@ export const currentPeopleGroups = [
     members: [],
   },
   {
-    group: "Undergraduate and BT/MT",
+    group: "MTech",
+    members: [],
+  },
+  {
+    group: "Undergraduate and BT-MT",
     members: [
       {
         name: "Ritwik Shankar",
@@ -351,12 +370,19 @@ export const currentPeopleGroups = [
     ],
   },
   {
-    group: "MTech",
+    group: "Research Assistant",
     members: [],
   },
+];
+
+export const calendarEvents = [
   {
-    group: "RA",
-    members: [],
+    id: "lab-calendar-placeholder",
+    title: "Lab calendar",
+    date: "",
+    time: "",
+    location: "Helicopter and VTOL Laboratory",
+    description: "Calendar entries can be added here as lab events are finalized.",
   },
 ];
 

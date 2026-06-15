@@ -38,6 +38,7 @@ function ProjectGrid({ projects, onSelect }) {
           <span className="project-card-body">
             <span className="project-area">{project.area}</span>
             <span className="project-card-title">{project.title}</span>
+            <span className="project-authors">Author: {(project.authors || []).join(", ")}</span>
             <span className="project-card-summary">{project.summary}</span>
           </span>
         </button>
@@ -78,6 +79,7 @@ function ProjectModal({ project, onClose }) {
         <div className="project-modal-content">
           <p className="project-area">{project.area}</p>
           <h2 id="project-modal-title">{project.title}</h2>
+          <p className="project-authors">Author: {(project.authors || []).join(", ")}</p>
           <p className="project-status">{project.status}</p>
           <p>{project.details || project.summary}</p>
           <div className="project-resource-grid">

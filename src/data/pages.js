@@ -46,10 +46,15 @@ export const pages = [
     summary: "Outreach activities and related material.",
   },
   {
+    slug: "calendar",
+    label: "Calendar",
+    source: "react",
+    summary: "Lab schedule and upcoming events.",
+  },
+  {
     slug: "contact",
     label: "Contact",
-    source: "legacy",
-    legacyFile: "contact.html",
+    source: "react",
     summary: "Department address and contact details.",
   },
 ];
@@ -77,6 +82,7 @@ export const legacyRouteAliases = {
   "indexfbe9.html": "journal-papers",
   "index7ea5.html": "outreach",
   "index5fdd.html": "outreach",
+  "index6077.html": "calendar",
   "indexdfdf.html": "contact",
   "index1e5b.html": "contact",
 };
