@@ -207,6 +207,145 @@ button {
   color: #ffffff;
 }
 
+.carousel-hero {
+  grid-template-columns: minmax(0, 600px) minmax(320px, 460px);
+}
+
+.lab-hero-carousel {
+  justify-self: end;
+  margin: 0;
+  min-width: 0;
+  width: min(100%, 460px);
+}
+
+.carousel-frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #dfe6df;
+  box-shadow: 0 24px 60px rgba(32, 36, 33, 0.15);
+}
+
+.carousel-frame img {
+  aspect-ratio: 4 / 3;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  border-radius: 999px;
+  width: 40px;
+  height: 40px;
+  background: rgba(32, 36, 33, 0.56);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.25rem;
+  font-weight: 900;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.carousel-arrow:hover,
+.carousel-arrow:focus-visible {
+  background: rgba(29, 103, 89, 0.9);
+  outline: none;
+}
+
+.carousel-arrow-left {
+  left: 12px;
+}
+
+.carousel-arrow-right {
+  right: 12px;
+}
+
+.lab-hero-carousel figcaption {
+  margin-top: 12px;
+  color: #4c554d;
+  font-size: 0.95rem;
+  font-weight: 800;
+}
+
+.marquee-hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: center;
+  overflow: hidden;
+  min-height: 520px;
+  border-radius: 8px;
+  padding: 52px;
+  isolation: isolate;
+}
+
+.marquee-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(90deg, rgba(14, 23, 18, 0.82), rgba(14, 23, 18, 0.44), rgba(14, 23, 18, 0.16)),
+    linear-gradient(0deg, rgba(14, 23, 18, 0.26), rgba(14, 23, 18, 0.26));
+}
+
+.hero-marquee-track {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: flex;
+  width: max-content;
+  animation: hero-marquee-scroll 34s linear infinite;
+}
+
+.hero-marquee-track img {
+  flex: 0 0 420px;
+  height: 100%;
+  width: 420px;
+  object-fit: cover;
+}
+
+.hero-copy-over-media {
+  max-width: 700px;
+}
+
+.hero-copy-over-media .section-eyebrow,
+.hero-copy-over-media h1,
+.hero-copy-over-media p {
+  color: #ffffff;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.28);
+}
+
+.hero-copy-over-media .section-eyebrow {
+  color: #f0c36e;
+}
+
+.hero-copy-over-media .hero-actions a {
+  border-color: rgba(255, 255, 255, 0.54);
+  background: rgba(255, 255, 255, 0.92);
+  color: #1d6759;
+}
+
+.hero-copy-over-media .hero-actions a:first-child {
+  border-color: #1d6759;
+  background: #1d6759;
+  color: #ffffff;
+}
+
+@keyframes hero-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .hero-portrait {
   justify-self: center;
   margin: 0;
@@ -327,6 +466,41 @@ button {
 .section-copy p {
   max-width: 72ch;
   overflow-wrap: break-word;
+}
+
+.education-list {
+  margin-bottom: 24px;
+}
+
+.pi-profile-card {
+  justify-self: end;
+  margin: 0;
+  min-width: 0;
+  width: min(100%, 330px);
+}
+
+.pi-profile-card img {
+  aspect-ratio: 4 / 5;
+  border-radius: 8px;
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0 22px 54px rgba(32, 36, 33, 0.14);
+}
+
+.pi-profile-card figcaption {
+  display: grid;
+  gap: 4px;
+  margin-top: 14px;
+  color: #4c554d;
+  font-size: 0.96rem;
+  line-height: 1.35;
+}
+
+.pi-profile-card strong {
+  color: #202421;
+  font-size: 1.16rem;
 }
 
 .clean-list {
@@ -1033,6 +1207,11 @@ button {
     max-width: 300px;
   }
 
+  .lab-hero-carousel,
+  .pi-profile-card {
+    justify-self: start;
+  }
+
   .project-grid {
     grid-template-columns: 1fr;
   }
@@ -1059,6 +1238,16 @@ button {
   .home-hero {
     min-height: auto;
     gap: 28px;
+  }
+
+  .marquee-hero {
+    min-height: 560px;
+    padding: 28px;
+  }
+
+  .hero-marquee-track img {
+    flex-basis: 300px;
+    width: 300px;
   }
 
   .home-hero h1,
@@ -1154,5 +1343,10 @@ button {
     animation: none;
     flex-wrap: wrap;
     width: auto;
+  }
+
+  .hero-marquee-track {
+    animation: none;
+    width: 100%;
   }
 }
