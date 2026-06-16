@@ -1,3 +1,5 @@
+import { publicPath } from "../utils/publicPath.js";
+
 export default function Header({ pages, activeSlug, onNavigate }) {
   return (
     <header className="site-header">
@@ -9,7 +11,7 @@ export default function Header({ pages, activeSlug, onNavigate }) {
           rel="noreferrer"
           aria-label="Visit IIT Kanpur"
         >
-          <img className="brand-logo" src="/assets/images/iitk.png" alt="IIT Kanpur logo" />
+          <img className="brand-logo" src={publicPath("/assets/images/iitk.png")} alt="IIT Kanpur logo" />
           <span className="brand-kicker">IIT Kanpur</span>
         </a>
         <nav className="primary-nav" aria-label="Primary navigation">
