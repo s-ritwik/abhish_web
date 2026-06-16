@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import DataTable from "../components/DataTable.jsx";
 import Section from "../components/Section.jsx";
 import {
@@ -88,6 +89,8 @@ function ContactLinks({ contacts = {} }) {
           title={link.label}
           target={link.type === "email" ? undefined : "_blank"}
           rel={link.type === "email" ? undefined : "noreferrer"}
+          onClick={(event) => event.stopPropagation()}
+          onKeyDown={(event) => event.stopPropagation()}
         >
           <ContactIcon type={link.type} />
         </a>
@@ -96,7 +99,7 @@ function ContactLinks({ contacts = {} }) {
   );
 }
 
-function PersonCard({ person }) {
+function PersonCard({ person, onOpen }) {
   const initials = person.name
     .split(" ")
     .filter(Boolean)
@@ -105,7 +108,18 @@ function PersonCard({ person }) {
     .join("");
 
   return (
-    <article className="person-card">
+    <article
+      className="person-card person-card-button"
+      role="button"
+      tabIndex={0}
+      onClick={() => onOpen(person)}
+      onKeyDown={(event) => {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          onOpen(person);
+        }
+      }}
+    >
       {person.image ? (
         <img src={publicPath(person.image)} alt={person.name} loading="lazy" decoding="async" />
       ) : (
@@ -122,13 +136,81 @@ function PersonCard({ person }) {
   );
 }
 
-function CurrentPeopleSection({ group }) {
+function PersonProfileModal({ person, onClose }) {
+  useEffect(() => {
+    if (!person) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        onClose();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [person, onClose]);
+
+  if (!person) {
+    return null;
+  }
+
+  return (
+    <div className="modal-backdrop" role="presentation" onMouseDown={onClose}>
+      <article
+        className="person-profile-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="person-profile-modal-title"
+        onMouseDown={(event) => event.stopPropagation()}
+      >
+        <button className="modal-close" type="button" onClick={onClose} aria-label="Close profile details">
+          x
+        </button>
+        {person.image ? (
+          <img src={publicPath(person.image)} alt={person.name} loading="lazy" decoding="async" />
+        ) : (
+          <div className="person-photo-placeholder modal-photo-placeholder" aria-hidden="true">
+            {person.name
+              .split(" ")
+              .filter(Boolean)
+              .slice(0, 2)
+              .map((part) => part[0])
+              .join("")}
+          </div>
+        )}
+        <div className="person-profile-content">
+          <h2 id="person-profile-modal-title">{person.name}</h2>
+          <p className="person-profile-line">{person.year || person.program || person.role}</p>
+          <ContactLinks contacts={person.contacts} />
+          <div className="person-profile-section">
+            <h3>Short Bio</h3>
+            <p>{person.shortBio || "Bio will be added soon."}</p>
+          </div>
+          <div className="person-profile-section">
+            <h3>Research Keywords</h3>
+            {person.researchKeywords?.length ? (
+              <ul className="tag-grid">
+                {person.researchKeywords.map((keyword) => (
+                  <li key={keyword}>{keyword}</li>
+                ))}
+              </ul>
+            ) : (
+              <p className="empty-value">Keywords will be added soon.</p>
+            )}
+          </div>
+        </div>
+      </article>
+    </div>
+  );
+}
+
+function CurrentPeopleSection({ group, onOpen }) {
   return (
     <Section title={group.group}>
       {group.members.length ? (
         <div className="people-card-grid">
           {group.members.map((person) => (
-            <PersonCard person={person} key={person.name} />
+            <PersonCard person={person} key={person.name} onOpen={onOpen} />
           ))}
         </div>
       ) : (
@@ -141,6 +223,7 @@ function CurrentPeopleSection({ group }) {
 }
 
 export default function PeoplePage() {
+  const [selectedPerson, setSelectedPerson] = useState(null);
   const phdRows = phdAlumni.map((person) => ({
     ...person,
     contact: <ContactLinks contacts={person.contacts} />,
@@ -162,7 +245,7 @@ export default function PeoplePage() {
       </section>
 
       {currentPeopleGroups.map((group) => (
-        <CurrentPeopleSection group={group} key={group.group} />
+        <CurrentPeopleSection group={group} key={group.group} onOpen={setSelectedPerson} />
       ))}
 
       <Section eyebrow="Alumni" title="PhD Alumni">
@@ -187,6 +270,8 @@ export default function PeoplePage() {
           ))}
         </div>
       </Section>
+
+      <PersonProfileModal person={selectedPerson} onClose={() => setSelectedPerson(null)} />
     </div>
   );
 }

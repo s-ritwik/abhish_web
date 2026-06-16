@@ -931,6 +931,22 @@ button {
   padding: 22px;
 }
 
+.person-card-button {
+  cursor: pointer;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.person-card-button:hover,
+.person-card-button:focus-visible {
+  border-color: rgba(29, 103, 89, 0.42);
+  box-shadow: 0 14px 34px rgba(32, 36, 33, 0.1);
+  outline: none;
+  transform: translateY(-1px);
+}
+
 .person-card img,
 .person-photo-placeholder {
   aspect-ratio: 1;
@@ -969,6 +985,74 @@ button {
   margin: 0;
   color: #4c554d;
   line-height: 1.45;
+}
+
+.person-profile-modal {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+  gap: 24px;
+  max-height: min(760px, calc(100vh - 48px));
+  max-width: 920px;
+  overflow: auto;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 30px 90px rgba(32, 36, 33, 0.28);
+  padding: 20px;
+}
+
+.person-profile-modal > img,
+.modal-photo-placeholder {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.person-profile-modal > img {
+  display: block;
+  object-fit: cover;
+}
+
+.modal-photo-placeholder {
+  width: 100%;
+  height: auto;
+  min-height: 220px;
+}
+
+.person-profile-content {
+  display: grid;
+  gap: 14px;
+  min-width: 0;
+}
+
+.person-profile-content h2 {
+  margin: 0;
+  color: #202421;
+  font-size: 2rem;
+  line-height: 1.08;
+}
+
+.person-profile-line {
+  color: #1d6759;
+  font-size: 1rem;
+  font-weight: 850;
+  margin: 0;
+}
+
+.person-profile-section {
+  display: grid;
+  gap: 8px;
+}
+
+.person-profile-section h3 {
+  margin: 0;
+}
+
+.person-profile-section p {
+  margin: 0;
+  color: #3b423d;
+  font-size: 1.02rem;
+  line-height: 1.65;
 }
 
 .people-empty-card {
@@ -1407,6 +1491,10 @@ button {
   }
 
   .people-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .person-profile-modal {
     grid-template-columns: 1fr;
   }
 
