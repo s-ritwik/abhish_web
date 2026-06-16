@@ -52,6 +52,12 @@ export const pages = [
     summary: "Lab schedule and upcoming events.",
   },
   {
+    slug: "gallery",
+    label: "Gallery",
+    source: "react",
+    summary: "Lab photographs, flight tests, and prototype imagery.",
+  },
+  {
     slug: "contact",
     label: "Contact",
     source: "react",

@@ -1,6 +1,5 @@
-import PhotoGallery from "../components/PhotoGallery.jsx";
 import Section from "../components/Section.jsx";
-import { galleryImages, lab, marqueeImages, profile, researchInterests } from "../data/siteContent.js";
+import { lab, marqueeImages, profile, researchInterests } from "../data/siteContent.js";
 import { publicPath } from "../utils/publicPath.js";
 import { useState } from "react";
 
@@ -144,10 +143,6 @@ export default function HomePage() {
             <img className="latest-image" src={publicPath(lab.latestImage)} alt="Sabal 20 unmanned logistic drone" />
           </div>
         </div>
-      </Section>
-
-      <Section eyebrow="Gallery" title="Lab Photo Gallery">
-        <PhotoGallery images={galleryImages} />
       </Section>
     </div>
   );

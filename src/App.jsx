@@ -4,6 +4,7 @@ import LegacyPage from "./components/LegacyPage.jsx";
 import { getPageBySlug, pages } from "./data/pages.js";
 import CalendarPage from "./pages/CalendarPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
+import GalleryPage from "./pages/GalleryPage.jsx";
 import HomePage from "./pages/HomePage.jsx";
 import PeoplePage from "./pages/PeoplePage.jsx";
 import ResearchPage from "./pages/ResearchPage.jsx";
@@ -24,6 +25,7 @@ export default function App() {
   }, []);
 
   const activePage = useMemo(() => getPageBySlug(activeSlug), [activeSlug]);
+  const navigationItems = useMemo(() => pages.filter((page) => page.slug !== "contact"), []);
 
   const navigate = (slug) => {
     window.location.hash = `/${slug}`;
@@ -32,13 +34,14 @@ export default function App() {
 
   return (
     <div className="app-shell">
-      <Header pages={pages} activeSlug={activePage.slug} onNavigate={navigate} />
+      <Header pages={navigationItems} activeSlug={activePage.slug} onNavigate={navigate} />
       <main className="site-main">
         {activePage.slug === "home" ? <HomePage /> : null}
         {activePage.slug === "people" ? <PeoplePage /> : null}
         {activePage.slug === "research" ? <ResearchPage /> : null}
         {activePage.slug === "teaching" ? <TeachingPage /> : null}
         {activePage.slug === "calendar" ? <CalendarPage /> : null}
+        {activePage.slug === "gallery" ? <GalleryPage /> : null}
         {activePage.slug === "contact" ? <ContactPage /> : null}
         {activePage.source === "legacy" ? (
           <LegacyPage key={activePage.slug} page={activePage} onNavigate={navigate} />

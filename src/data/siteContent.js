@@ -50,11 +50,6 @@ export const galleryImages = [
     caption: "Sabal 20 logistics UAV",
   },
   {
-    src: "/assets/images/marquee/mav-collage.jpg",
-    alt: "MAV and UAV collage",
-    caption: "MAV/UAV prototypes",
-  },
-  {
     src: "/assets/images/marquee/tailsitter-hover.jpg",
     alt: "Quadrotor biplane tailsitter in hover mode",
     caption: "Biplane tailsitter hover",
@@ -74,7 +69,58 @@ export const galleryImages = [
     alt: "Variable pitch quadrotor prototype",
     caption: "Variable pitch quadrotor",
   },
+  {
+    src: "/assets/images/marquee/uav_landing.png",
+    alt: "Autonomous UAV landing experiment",
+    caption: "Autonomous UAV landing",
+  },
+  {
+    src: "/assets/images/marquee/uav_sway.png",
+    alt: "UAV moving deck sway experiment",
+    caption: "Moving-deck landing experiment",
+  },
+  {
+    src: "/assets/images/marquee/tandem-rotor-uav-ground-test.jpeg",
+    alt: "Tandem rotor UAV on a grass test field",
+    caption: "Tandem rotor UAV ground test",
+  },
+  {
+    src: "/assets/images/marquee/tandem-rotor-uav-sunset.jpeg",
+    alt: "Tandem rotor UAV at sunset on the flight field",
+    caption: "Tandem rotor UAV at sunset",
+  },
+  {
+    src: "/assets/images/marquee/high-altitude-uav-hover-test.jpeg",
+    alt: "Heavy-lift UAV hovering during a mountain runway trial",
+    caption: "High-altitude hover test",
+  },
+  {
+    src: "/assets/images/marquee/high-altitude-uav-flight.jpeg",
+    alt: "Heavy-lift UAV flying over snow-covered mountains",
+    caption: "Mountain flight test",
+  },
+  {
+    src: "/assets/images/marquee/winter-uav-hover-trial.jpeg",
+    alt: "Heavy-lift UAV hovering over snow during winter trials",
+    caption: "Winter hover trial",
+  },
+  {
+    src: "/assets/images/marquee/tandem-rotor-uav-prototype.jpeg",
+    alt: "Tandem rotor UAV prototype on a grass field",
+    caption: "Tandem rotor UAV prototype",
+  },
+  {
+    src: "/assets/images/marquee/micro-helicopter-autopilot-bench.jpeg",
+    alt: "Small helicopter autopilot prototype on a lab bench",
+    caption: "Autopilot bench prototype",
+  },
 ];
+
+export const galleryLeadImage = {
+  src: "/assets/images/Lab_Photo.jpg",
+  alt: "Helicopter and VTOL Laboratory group photo",
+  caption: "Helicopter and VTOL Laboratory",
+};
 
 export const marqueeImages = [
   {
@@ -86,11 +132,6 @@ export const marqueeImages = [
     src: "/assets/images/marquee/uav_landing.png",
     alt: "Autonomous UAV landing experiment",
     caption: "Autonomous UAV landing",
-  },
-  {
-    src: "/assets/images/marquee/mav-collage.jpg",
-    alt: "MAV and UAV collage",
-    caption: "MAV/UAV prototypes",
   },
   {
     src: "/assets/images/marquee/tailsitter-hover.jpg",
@@ -116,6 +157,41 @@ export const marqueeImages = [
     src: "/assets/images/marquee/variable-pitch-quadrotor.jpg",
     alt: "Variable pitch quadrotor prototype",
     caption: "Variable pitch quadrotor",
+  },
+  {
+    src: "/assets/images/marquee/tandem-rotor-uav-ground-test.jpeg",
+    alt: "Tandem rotor UAV on a grass test field",
+    caption: "Tandem rotor UAV ground test",
+  },
+  {
+    src: "/assets/images/marquee/tandem-rotor-uav-sunset.jpeg",
+    alt: "Tandem rotor UAV at sunset on the flight field",
+    caption: "Tandem rotor UAV at sunset",
+  },
+  {
+    src: "/assets/images/marquee/high-altitude-uav-hover-test.jpeg",
+    alt: "Heavy-lift UAV hovering during a mountain runway trial",
+    caption: "High-altitude hover test",
+  },
+  {
+    src: "/assets/images/marquee/high-altitude-uav-flight.jpeg",
+    alt: "Heavy-lift UAV flying over snow-covered mountains",
+    caption: "Mountain flight test",
+  },
+  {
+    src: "/assets/images/marquee/winter-uav-hover-trial.jpeg",
+    alt: "Heavy-lift UAV hovering over snow during winter trials",
+    caption: "Winter hover trial",
+  },
+  {
+    src: "/assets/images/marquee/tandem-rotor-uav-prototype.jpeg",
+    alt: "Tandem rotor UAV prototype on a grass field",
+    caption: "Tandem rotor UAV prototype",
+  },
+  {
+    src: "/assets/images/marquee/micro-helicopter-autopilot-bench.jpeg",
+    alt: "Small helicopter autopilot prototype on a lab bench",
+    caption: "Autopilot bench prototype",
   },
 ];
 
