@@ -39,6 +39,7 @@ Then:
 1. Open the `HVTL Project Intake` form in edit mode.
 2. Replace the `Project Image` short-answer question with a `File upload` question.
 3. Keep the title exactly `Project Image`.
+4. Keep this question optional unless you want to force every submitted project to include its own image.
 
 If you prefer not to use file-upload questions, the generated forms already accept a Google Drive share link in those fields.
 

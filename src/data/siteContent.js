@@ -1,3 +1,5 @@
+import { generatedResearchProjects } from "./generatedResearchProjects.js";
+
 export const profile = {
   name: "Dr. Abhishek",
   title: "AVM Harjinder Singh, VSM, Chair Professor",
@@ -204,7 +206,7 @@ export const researchFocus = [
   "Wind turbine mechanisms",
 ];
 
-export const researchProjects = [
+const baseResearchProjects = [
   {
     title: "High Endurance Tandem Rotor UAV",
     area: "Aerial logistics",
@@ -332,6 +334,18 @@ export const researchProjects = [
     relatedLinks: [],
   },
 ];
+
+function mergeResearchProjects(baseProjects, importedProjects) {
+  const merged = new Map(baseProjects.map((project) => [project.title, project]));
+
+  for (const project of importedProjects) {
+    merged.set(project.title, project);
+  }
+
+  return Array.from(merged.values());
+}
+
+export const researchProjects = mergeResearchProjects(baseResearchProjects, generatedResearchProjects);
 
 export const teachingCourses = [
   {

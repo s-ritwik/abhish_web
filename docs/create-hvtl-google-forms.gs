@@ -5,8 +5,6 @@ const PEOPLE_GROUP_OPTIONS = [
   "Research Assistant",
 ];
 
-const PROJECT_PHASE_OPTIONS = ["ongoing", "completed"];
-
 const PEOPLE_PUBLISH_CONSENT =
   "I confirm these details may be published on the Helicopter and VTOL Laboratory website.";
 
@@ -172,9 +170,10 @@ function createProjectForm_() {
     form,
     [
       "Collect one response per project from a designated project lead.",
-      "Use the exact project title and author ordering intended for the website.",
+      "This form mirrors the fields already visible in each Research project card and popup.",
+      "Use the exact project title, tag, author order, and short technical description intended for the website.",
       "Important: the 'Project Image' field is created as a short-answer placeholder because Apps Script's built-in Forms service does not expose file-upload question creation.",
-      "After generating the form, you can manually replace that question with a Google Forms File upload question while keeping the title exactly 'Project Image'.",
+      "After generating the form, you can manually replace that question with a Google Forms File upload question while keeping the title exactly 'Project Image'. This field is optional.",
     ].join("\n\n"),
     "Thank you. Your project details have been recorded for review.",
   );
@@ -188,27 +187,8 @@ function createProjectForm_() {
 
   addTextItem_(
     form,
-    "Project Title",
-    "Use the exact title to publish.",
-    true,
-    FormApp.createTextValidation()
-      .requireTextLengthGreaterThanOrEqualTo(8)
-      .requireTextLengthLessThanOrEqualTo(120)
-      .build(),
-  );
-
-  addDropdownItem_(
-    form,
-    "Project Phase",
-    "Select whether the project should appear under ongoing or completed work.",
-    true,
-    PROJECT_PHASE_OPTIONS,
-  );
-
-  addTextItem_(
-    form,
-    "Research Area",
-    "Example: Autonomous Landing",
+    "Tag",
+    "One uppercase project tag shown above the title. Example: AUTONOMOUS LANDING",
     true,
     FormApp.createTextValidation()
       .requireTextLengthGreaterThanOrEqualTo(3)
@@ -218,8 +198,27 @@ function createProjectForm_() {
 
   addTextItem_(
     form,
-    "Status Line",
-    "Example: Prototype flight tested in hover",
+    "Title",
+    "Use the exact project title to publish. Example: RL-Optimised UAV Quadrotor Landing On A Heaving Ship-Deck Emulator With CBF-Safety Filtering",
+    true,
+    FormApp.createTextValidation()
+      .requireTextLengthGreaterThanOrEqualTo(8)
+      .requireTextLengthLessThanOrEqualTo(160)
+      .build(),
+  );
+
+  addTextItem_(
+    form,
+    "Author(s)",
+    "Comma-separated full names in display order. Example: Ritwik Shankar, Chiranjeev Prachand",
+    true,
+    null,
+  );
+
+  addTextItem_(
+    form,
+    "Short Technical Description (<10 words)",
+    "Shown in green inside the project popup. Example: RL landing policy with CBF safety filtering",
     true,
     FormApp.createTextValidation()
       .requireTextLengthGreaterThanOrEqualTo(3)
@@ -227,32 +226,13 @@ function createProjectForm_() {
       .build(),
   );
 
-  addTextItem_(
-    form,
-    "Author Names in Display Order",
-    "Comma-separated full names. These should match people-form names exactly where applicable.",
-    true,
-    null,
-  );
-
   addParagraphItem_(
     form,
-    "Card Summary",
-    "One or two sentences. This is shown on the project card. Target length: 80-260 characters.",
+    "Abstract / Summary / Plan",
+    "The main project paragraph shown in the popup and summarized on the project card.",
     true,
     FormApp.createParagraphTextValidation()
       .requireTextLengthGreaterThanOrEqualTo(80)
-      .requireTextLengthLessThanOrEqualTo(260)
-      .build(),
-  );
-
-  addParagraphItem_(
-    form,
-    "Full Details",
-    "Two to six sentences. This is shown in the project modal. Target length: 120-800 characters.",
-    true,
-    FormApp.createParagraphTextValidation()
-      .requireTextLengthGreaterThanOrEqualTo(120)
       .requireTextLengthLessThanOrEqualTo(800)
       .build(),
   );
@@ -260,8 +240,8 @@ function createProjectForm_() {
   addTextItem_(
     form,
     "Project Image",
-    "Temporary placeholder created by script. Paste a Google Drive share link, or manually replace this question with a File upload question while keeping the title exactly 'Project Image'. Required asset guidance: one JPG or PNG, square or 4:3 preferred, minimum 1600 px on the shortest side.",
-    true,
+    "Optional. Temporary placeholder created by script. Paste a Google Drive share link, or manually replace this question with a File upload question while keeping the title exactly 'Project Image'. Recommended asset guidance: one JPG or PNG, square or 4:3 preferred, minimum 1600 px on the shortest side.",
+    false,
     FormApp.createTextValidation()
       .requireTextIsUrl()
       .requireTextMatchesPattern("^https://.*")
@@ -269,45 +249,36 @@ function createProjectForm_() {
   );
 
   form.addSectionHeaderItem()
-    .setTitle("Experiment videos")
-    .setHelpText("Only complete label and URL pairs will be imported.");
+    .setTitle("Optional project links")
+    .setHelpText("Use one line per link. Format each line as: Label | https://example.com");
 
-  addLabeledLinkTriplet_(form, "Experiment Video", "video");
+  addParagraphItem_(
+    form,
+    "Experiment / Simulation Video Results Links",
+    "Optional. One per line, using: Label | URL. Example: Heaving deck landing experiment | https://youtu.be/...",
+    false,
+    null,
+  );
 
-  form.addSectionHeaderItem()
-    .setTitle("Paper links")
-    .setHelpText("Only complete label and URL pairs will be imported.");
+  addParagraphItem_(
+    form,
+    "Paper Links",
+    "Optional. One per line, using: Label | URL.",
+    false,
+    null,
+  );
 
-  addLabeledLinkTriplet_(form, "Paper Link", "paper");
-
-  form.addSectionHeaderItem()
-    .setTitle("Related links")
-    .setHelpText("Only complete label and URL pairs will be imported.");
-
-  addLabeledLinkTriplet_(form, "Related Link", "related");
+  addParagraphItem_(
+    form,
+    "Related Links",
+    "Optional. One per line, using: Label | URL.",
+    false,
+    null,
+  );
 
   form.addSectionHeaderItem()
     .setTitle("Submitter details")
     .setHelpText("Used for internal review and follow-up.");
-
-  addTextItem_(
-    form,
-    "Lead Submitter Name",
-    "Name of the person filling this form.",
-    true,
-    FormApp.createTextValidation()
-      .requireTextLengthGreaterThanOrEqualTo(2)
-      .requireTextLengthLessThanOrEqualTo(60)
-      .build(),
-  );
-
-  addTextItem_(
-    form,
-    "Lead Submitter Email",
-    "Valid email address for follow-up.",
-    true,
-    FormApp.createTextValidation().requireTextIsEmail().build(),
-  );
 
   addConsentCheckbox_(form, "Publish Consent", PROJECT_PUBLISH_CONSENT);
 

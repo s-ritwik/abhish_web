@@ -25,7 +25,7 @@ export default function App() {
   }, []);
 
   const activePage = useMemo(() => getPageBySlug(activeSlug), [activeSlug]);
-  const navigationItems = useMemo(() => pages.filter((page) => page.slug !== "contact"), []);
+  const navigationItems = useMemo(() => pages.filter((page) => page.slug !== "calendar"), []);
 
   const navigate = (slug) => {
     window.location.hash = `/${slug}`;

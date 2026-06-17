@@ -73,54 +73,28 @@ Use these exact field labels so the exported spreadsheet headers stay stable.
 
 | Field Label | Key | Type | Required | Validation / Notes | Maps To |
 | --- | --- | --- | --- | --- | --- |
-| Project Title | `project_title` | Short answer | Yes | 8-120 characters. Use the exact title to publish. | `title` |
-| Project Phase | `project_phase` | Dropdown | Yes | Exact options: `ongoing`, `completed` | `phase` |
-| Research Area | `research_area` | Short answer | Yes | 3-60 characters. Example: `Autonomous Landing` | `area` |
-| Status Line | `status_line` | Short answer | Yes | 3-80 characters. Example: `Prototype flight tested in hover` | `status` |
-| Author Names in Display Order | `author_names` | Short answer | Yes | Comma-separated full names. Must match people form names exactly when applicable. | `authors[]` |
-| Card Summary | `card_summary` | Paragraph | Yes | 80-260 characters. One or two sentences. This is shown on the project card. | `summary` |
-| Full Details | `full_details` | Paragraph | Yes | 120-800 characters. Two to six sentences. This is shown in the modal. | `details` |
-| Project Image | `project_image` | File upload | Yes | One JPG or PNG. Square or 4:3 preferred. Minimum 1600 px on shortest side. Subject centered. | `image` |
-| Experiment Video 1 Label | `experiment_video_1_label` | Short answer | No | If URL is present, label is required. | `experimentVideos[0].label` |
-| Experiment Video 1 URL | `experiment_video_1_url` | Short answer | No | Must start with `https://` | `experimentVideos[0].href` |
-| Experiment Video 2 Label | `experiment_video_2_label` | Short answer | No | If URL is present, label is required. | `experimentVideos[1].label` |
-| Experiment Video 2 URL | `experiment_video_2_url` | Short answer | No | Must start with `https://` | `experimentVideos[1].href` |
-| Experiment Video 3 Label | `experiment_video_3_label` | Short answer | No | If URL is present, label is required. | `experimentVideos[2].label` |
-| Experiment Video 3 URL | `experiment_video_3_url` | Short answer | No | Must start with `https://` | `experimentVideos[2].href` |
-| Paper Link 1 Label | `paper_link_1_label` | Short answer | No | If URL is present, label is required. | `paperLinks[0].label` |
-| Paper Link 1 URL | `paper_link_1_url` | Short answer | No | Must start with `https://` | `paperLinks[0].href` |
-| Paper Link 2 Label | `paper_link_2_label` | Short answer | No | If URL is present, label is required. | `paperLinks[1].label` |
-| Paper Link 2 URL | `paper_link_2_url` | Short answer | No | Must start with `https://` | `paperLinks[1].href` |
-| Paper Link 3 Label | `paper_link_3_label` | Short answer | No | If URL is present, label is required. | `paperLinks[2].label` |
-| Paper Link 3 URL | `paper_link_3_url` | Short answer | No | Must start with `https://` | `paperLinks[2].href` |
-| Related Link 1 Label | `related_link_1_label` | Short answer | No | If URL is present, label is required. | `relatedLinks[0].label` |
-| Related Link 1 URL | `related_link_1_url` | Short answer | No | Must start with `https://` | `relatedLinks[0].href` |
-| Related Link 2 Label | `related_link_2_label` | Short answer | No | If URL is present, label is required. | `relatedLinks[1].label` |
-| Related Link 2 URL | `related_link_2_url` | Short answer | No | Must start with `https://` | `relatedLinks[1].href` |
-| Related Link 3 Label | `related_link_3_label` | Short answer | No | If URL is present, label is required. | `relatedLinks[2].label` |
-| Related Link 3 URL | `related_link_3_url` | Short answer | No | Must start with `https://` | `relatedLinks[2].href` |
-| Lead Submitter Name | `lead_submitter_name` | Short answer | Yes | Name of the person filling the form | Review only |
-| Lead Submitter Email | `lead_submitter_email` | Short answer | Yes | Must be a valid email address | Review only |
+| Tag | `tag` | Short answer | Yes | One uppercase tag. Example: `AUTONOMOUS LANDING` | `area` |
+| Title | `title` | Short answer | Yes | 8-160 characters. Use the exact title to publish. | `title` |
+| Author(s) | `authors` | Short answer | Yes | Comma-separated full names in display order. Example: `Ritwik Shankar, Chiranjeev Prachand` | `authors[]` |
+| Short Technical Description (<10 words) | `short_technical_description` | Short answer | Yes | Under 10 words. Example: `RL landing policy with CBF safety filtering` | `status` |
+| Abstract / Summary / Plan | `abstract_summary_plan` | Paragraph | Yes | 80-800 characters. Main project paragraph shown in the popup; card summary is generated from this text. | `details`, `summary` |
+| Project Image | `project_image` | File upload or Drive link | No | Optional JPG or PNG. Square or 4:3 preferred. Minimum 1600 px on shortest side. Subject centered. | `image` |
+| Experiment / Simulation Video Results Links | `experiment_simulation_video_results_links` | Paragraph | No | One link per line, format: `Label \| URL` | `experimentVideos[]` |
+| Paper Links | `paper_links` | Paragraph | No | One link per line, format: `Label \| URL` | `paperLinks[]` |
+| Related Links | `related_links` | Paragraph | No | One link per line, format: `Label \| URL` | `relatedLinks[]` |
 | Publish Consent | `publish_consent` | Checkbox | Yes | Exact checkbox text: `I confirm these project details may be published on the Helicopter and VTOL Laboratory website.` | Required for publish |
-
-### Project Form Dropdown Values
-
-Use exactly these values for `Project Phase`:
-
-- `ongoing`
-- `completed`
 
 ### Project Form Import Rules
 
-Split `Author Names in Display Order` on commas, trim whitespace, and store as the `authors` array.
+Split `Author(s)` on commas, trim whitespace, and store as the `authors` array.
 
-Build link arrays from complete label and URL pairs only:
+Build link arrays from each paragraph field by reading one link per line:
 
 - `experimentVideos`
 - `paperLinks`
 - `relatedLinks`
 
-Ignore blank pairs. Do not create empty placeholder objects.
+Each line should use `Label | URL`. Ignore blank lines. Do not create empty placeholder objects.
 
 Rename project images to:
 
@@ -168,14 +142,11 @@ Before importing into the site, check that each published person entry has:
 
 Before importing into the site, check that each published project entry has:
 
-- `Project Title`
-- `Project Phase`
-- `Research Area`
-- `Status Line`
-- `Author Names in Display Order`
-- `Card Summary`
-- `Full Details`
-- `Project Image`
+- `Tag`
+- `Title`
+- `Author(s)`
+- `Short Technical Description (<10 words)`
+- `Abstract / Summary / Plan`
 - `Publish Consent`
 
 ## Why This Matches the Current Site
