@@ -74,22 +74,22 @@ export const galleryImages = [
   {
     src: "/assets/images/marquee/uav_landing.png",
     alt: "Autonomous UAV landing experiment",
-    caption: "Autonomous UAV landing",
+    caption: "Autonomous UAV heave landing",
   },
   {
     src: "/assets/images/marquee/uav_sway.png",
     alt: "UAV moving deck sway experiment",
-    caption: "Moving-deck landing experiment",
+    caption: "Moving-deck landing (sway) experiment",
   },
   {
     src: "/assets/images/marquee/tandem-rotor-uav-ground-test.jpeg",
     alt: "Tandem rotor UAV on a grass test field",
-    caption: "Tandem rotor UAV ground test",
+    caption: "Variable Pitch Sabal 40 ground test",
   },
   {
     src: "/assets/images/marquee/tandem-rotor-uav-sunset.jpeg",
     alt: "Tandem rotor UAV at sunset on the flight field",
-    caption: "Tandem rotor UAV at sunset",
+    caption: "Tandem rotor and the golden hour",
   },
   {
     src: "/assets/images/marquee/high-altitude-uav-hover-test.jpeg",
@@ -99,12 +99,12 @@ export const galleryImages = [
   {
     src: "/assets/images/marquee/high-altitude-uav-flight.jpeg",
     alt: "Heavy-lift UAV flying over snow-covered mountains",
-    caption: "Mountain flight test",
+    caption: "High-altitude flight test",
   },
   {
     src: "/assets/images/marquee/winter-uav-hover-trial.jpeg",
     alt: "Heavy-lift UAV hovering over snow during winter trials",
-    caption: "Winter hover trial",
+    caption: "Extreme weather hover trial",
   },
   {
     src: "/assets/images/marquee/tandem-rotor-uav-prototype.jpeg",
@@ -114,7 +114,7 @@ export const galleryImages = [
   {
     src: "/assets/images/marquee/micro-helicopter-autopilot-bench.jpeg",
     alt: "Small helicopter autopilot prototype on a lab bench",
-    caption: "Autopilot bench prototype",
+    caption: "Swashplate-less micro helicopter prototype",
   },
 ];
 

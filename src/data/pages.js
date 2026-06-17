@@ -19,6 +19,13 @@ export const pages = [
     summary: "Current students and alumni organized in the original group order.",
   },
   {
+    slug: "prospective-students",
+    label: "Prospective Students",
+    source: "legacy",
+    legacyFile: "prospective-students.html",
+    summary: "Information for BT, MTech, MSR, and PhD students interested in joining the lab.",
+  },
+  {
     slug: "teaching",
     label: "Teaching",
     source: "react",
