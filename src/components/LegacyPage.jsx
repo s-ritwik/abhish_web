@@ -111,7 +111,8 @@ export default function LegacyPage({ page, onNavigate }) {
       setHtml("");
 
       try {
-        const response = await fetch(publicPath(`legacy-pages/${page.legacyFile}`));
+        const legacyContentUrl = `${publicPath(`legacy-pages/${page.legacyFile}`)}?v=${Date.now()}`;
+        const response = await fetch(legacyContentUrl, { cache: "no-cache" });
         if (!response.ok) {
           throw new Error(`Unable to load ${page.legacyFile}`);
         }
