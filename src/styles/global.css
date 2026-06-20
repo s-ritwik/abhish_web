@@ -61,8 +61,8 @@ button {
 
 .header-inner {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 28px;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 20px;
   align-items: center;
   max-width: 1720px;
   width: calc(100% - 56px);
@@ -105,10 +105,50 @@ button {
 .primary-nav {
   display: flex;
   flex-wrap: nowrap;
-  justify-content: flex-end;
+  justify-content: center;
   gap: clamp(4px, 0.45vw, 10px);
   min-width: 0;
   overflow: visible;
+}
+
+.department-link {
+  border-left: 2px solid rgba(123, 84, 23, 0.38);
+  color: #2f352f;
+  display: grid;
+  gap: 2px;
+  justify-self: end;
+  line-height: 1.05;
+  max-width: 250px;
+  padding: 4px 0 4px 14px;
+  text-align: right;
+  text-decoration: none;
+}
+
+.department-link span {
+  color: #7b5417;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.department-link strong {
+  color: #202421;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.department-link:hover,
+.department-link:focus-visible {
+  border-left-color: #1d6759;
+  color: #1d6759;
+  outline: none;
+}
+
+.department-link:hover strong,
+.department-link:focus-visible strong {
+  color: #1d6759;
 }
 
 .primary-nav a,
@@ -1522,6 +1562,12 @@ button {
 
   .primary-nav {
     justify-content: flex-start;
+  }
+
+  .department-link {
+    justify-self: start;
+    max-width: none;
+    text-align: left;
   }
 
   .hero-portrait {

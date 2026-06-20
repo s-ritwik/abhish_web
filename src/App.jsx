@@ -15,23 +15,39 @@ function getRouteFromHash() {
   return rawHash || "home";
 }
 
-function scrollToSection(sectionId) {
+function scrollToSection(sectionId, attempt = 0) {
   window.setTimeout(() => {
-    document.getElementById(sectionId)?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  }, 0);
+    const target = document.getElementById(sectionId);
+
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+      return;
+    }
+
+    if (attempt < 20) {
+      scrollToSection(sectionId, attempt + 1);
+    }
+  }, attempt === 0 ? 0 : 60);
 }
 
 export default function App() {
   const [activeSlug, setActiveSlug] = useState(getRouteFromHash);
+  const [pendingSectionId, setPendingSectionId] = useState("");
 
   useEffect(() => {
     const handleHashChange = () => setActiveSlug(getRouteFromHash());
     window.addEventListener("hashchange", handleHashChange);
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
+
+  useEffect(() => {
+    if (!pendingSectionId) return;
+    scrollToSection(pendingSectionId);
+    setPendingSectionId("");
+  }, [activeSlug, pendingSectionId]);
 
   const activePage = useMemo(() => getPageBySlug(activeSlug), [activeSlug]);
   const navigationItems = useMemo(() => pages.filter((page) => page.slug !== "calendar"), []);
@@ -40,7 +56,9 @@ export default function App() {
     window.location.hash = `/${slug}`;
     setActiveSlug(slug);
     if (options.sectionId) {
-      scrollToSection(options.sectionId);
+      setPendingSectionId(options.sectionId);
+    } else {
+      setPendingSectionId("");
     }
   };
 

@@ -124,6 +124,15 @@ export default function Header({ pages, activeSlug, onNavigate }) {
             );
           })}
         </nav>
+        <a
+          className="department-link"
+          href="https://www.iitk.ac.in/aero/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <span>Department of</span>
+          <strong>Aerospace Engineering</strong>
+        </a>
       </div>
     </header>
   );

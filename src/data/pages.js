@@ -21,6 +21,13 @@ export const pages = [
     label: "People",
     source: "react",
     summary: "Current students and alumni organized in the original group order.",
+    navChildren: [
+      { label: "PhD", sectionId: "people-phd" },
+      { label: "MTech", sectionId: "people-mtech" },
+      { label: "UG / BT-MT", sectionId: "people-ug-bt-mt" },
+      { label: "RA", sectionId: "people-ra" },
+      { label: "Summer Students", sectionId: "summer-students" },
+    ],
   },
   {
     slug: "prospective-students",
@@ -41,6 +48,12 @@ export const pages = [
     source: "legacy",
     legacyFile: "awards.html",
     summary: "Faculty, student, and professional recognition.",
+    navChildren: [
+      { label: "Faculty", sectionId: "awards-faculty" },
+      { label: "As Student", sectionId: "awards-as-student" },
+      { label: "Student Awards", sectionId: "awards-students" },
+      { label: "Memberships", sectionId: "awards-memberships" },
+    ],
   },
   {
     slug: "journal-papers",

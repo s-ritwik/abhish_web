@@ -206,7 +206,7 @@ function PersonProfileModal({ person, onClose }) {
 
 function CurrentPeopleSection({ group, onOpen }) {
   return (
-    <Section title={group.group}>
+    <Section title={group.group} id={group.id}>
       {group.members.length ? (
         <div className="people-card-grid">
           {group.members.map((person) => (
@@ -221,6 +221,13 @@ function CurrentPeopleSection({ group, onOpen }) {
     </Section>
   );
 }
+
+const peopleGroupIds = {
+  PhD: "people-phd",
+  MTech: "people-mtech",
+  "Undergraduate and BT-MT": "people-ug-bt-mt",
+  "Research Assistant": "people-ra",
+};
 
 function TraineeEntry({ person }) {
   if (typeof person === "string") {
@@ -269,7 +276,11 @@ export default function PeoplePage() {
       </section>
 
       {currentPeopleGroups.map((group) => (
-        <CurrentPeopleSection group={group} key={group.group} onOpen={setSelectedPerson} />
+        <CurrentPeopleSection
+          group={{ ...group, id: peopleGroupIds[group.group] }}
+          key={group.group}
+          onOpen={setSelectedPerson}
+        />
       ))}
 
       <Section eyebrow="Alumni" title="PhD Alumni">
@@ -280,7 +291,7 @@ export default function PeoplePage() {
         <DataTable columns={degreeAlumniColumns} rows={degreeRows} />
       </Section>
 
-      <Section eyebrow="Alumni" title="Undergraduate Summer Trainees">
+      <Section eyebrow="Alumni" title="Undergraduate Summer Trainees" id="summer-students">
         <div className="trainee-grid">
           {summerTrainees.map((group) => (
             <article className="trainee-year" key={group.year}>
