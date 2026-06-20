@@ -15,6 +15,15 @@ function getRouteFromHash() {
   return rawHash || "home";
 }
 
+function scrollToSection(sectionId) {
+  window.setTimeout(() => {
+    document.getElementById(sectionId)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }, 0);
+}
+
 export default function App() {
   const [activeSlug, setActiveSlug] = useState(getRouteFromHash);
 
@@ -27,9 +36,12 @@ export default function App() {
   const activePage = useMemo(() => getPageBySlug(activeSlug), [activeSlug]);
   const navigationItems = useMemo(() => pages.filter((page) => page.slug !== "calendar"), []);
 
-  const navigate = (slug) => {
+  const navigate = (slug, options = {}) => {
     window.location.hash = `/${slug}`;
     setActiveSlug(slug);
+    if (options.sectionId) {
+      scrollToSection(options.sectionId);
+    }
   };
 
   return (

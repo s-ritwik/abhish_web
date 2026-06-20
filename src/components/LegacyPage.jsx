@@ -6,6 +6,7 @@ const assetMap = new Map([
   ["files/150/abhishek.jpg", "assets/images/thumbnails/abhishek.jpg"],
   ["files/150/Hardware_Schematic.png", "assets/images/thumbnails/hardware-schematic.png"],
   ["files/150/micav2.jpg", "assets/images/thumbnails/micav2.jpg"],
+  ["files/150/vawt_cr.jpg", "assets/images/thumbnails/vawt-cr.jpg"],
   ["files/200/mav-collage.jpg", "assets/images/thumbnails/mav-collage.jpg"],
   ["files/200/group.jpg", "assets/images/Lab_Photo.jpg"],
   ["files/abhishek.jpg", "assets/images/abhishek.jpg"],
@@ -13,6 +14,7 @@ const assetMap = new Map([
   ["files/sabal-20.jpg", "assets/images/sabal-20.jpg"],
   ["files/ruav-iitk.jpg", "assets/images/ruav-iitk.jpg"],
   ["files/P1010398-edt.jpg", "assets/images/variable-pitch-quadrotor.jpg"],
+  ["files/vawt_cr.jpg", "assets/images/vawt-cr.jpg"],
   ["files/micav2.jpg", "assets/images/micav2.jpg"],
   ["files/mav-collage.jpg", "assets/images/mav-collage.jpg"],
   ["files/Hardware_Schematic.png", "assets/images/hardware-schematic.png"],
@@ -26,6 +28,10 @@ const assetMap = new Map([
   ["uploads/tailsitter_ff.jpg", "assets/images/tailsitter-forward-flight.jpg"],
   ["files/ae_686.pdf", "assets/documents/ae_686.pdf"],
   ["files/ae-630.pdf", "assets/documents/ae-630.pdf"],
+  ["files/ARF_2015_coaxial.pdf", "assets/documents/ARF_2015_coaxial.pdf"],
+  ["files/ARF_2015_inverse.pdf", "assets/documents/ARF_2015_inverse.pdf"],
+  ["files/ARF_2015_stability.pdf", "assets/documents/ARF_2015_stability.pdf"],
+  ["files/ARF_2015_VAWT.pdf", "assets/documents/ARF_2015_VAWT.pdf"],
   ["uploads/ae660.pdf", "assets/documents/ae660.pdf"],
   [
     "../../www.iitk.ac.in/aero/abhishek/uploads/Helicopter_design.jpg",
@@ -43,6 +49,11 @@ const assetMap = new Map([
 
 function legacySlugFromHref(href) {
   if (!href || href.startsWith("#")) return null;
+  const queryKey = href.match(/\?([^#]+)/)?.[1];
+  if (queryKey && legacyRouteAliases[queryKey]) {
+    return legacyRouteAliases[queryKey];
+  }
+
   const cleanPath = href.split("?")[0].split("#")[0].split("/").pop();
   return legacyRouteAliases[cleanPath] || null;
 }
@@ -148,9 +159,11 @@ export default function LegacyPage({ page, onNavigate }) {
 
   return (
     <article className="content-frame">
-      <div className="page-summary">
-        <p>{page.summary}</p>
-      </div>
+      {page.summary ? (
+        <div className="page-summary">
+          <p>{page.summary}</p>
+        </div>
+      ) : null}
 
       {error ? <p className="load-error">{error}</p> : null}
       {!error && !html ? <p className="loading-state">Loading page content...</p> : null}

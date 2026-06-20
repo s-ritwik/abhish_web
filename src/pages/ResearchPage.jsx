@@ -118,11 +118,11 @@ export default function ResearchPage() {
         </ul>
       </Section>
 
-      <Section title="Ongoing Projects">
+      <Section title="Ongoing Projects" id="ongoing-projects">
         <ProjectGrid projects={ongoingProjects} onSelect={setSelectedProject} />
       </Section>
 
-      <Section title="Completed Projects">
+      <Section title="Completed Projects" id="completed-projects">
         <ProjectGrid projects={completedProjects} onSelect={setSelectedProject} />
       </Section>
 

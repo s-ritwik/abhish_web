@@ -218,7 +218,75 @@ const baseResearchProjects = [
     summary:
       "A tandem rotor UAV platform developed at IIT Kanpur for payload transport and autonomous stabilization using in-house guidance and control software.",
     details:
-      "The platform work focused on payload transport, autonomous stabilization, and flight testing for logistics applications.",
+      "A tandem rotor UAV platform designed and developed at IIT Kanpur for aerial logistics with 10 kg payload capacity, a 12 kg empty weight, and a 4 kW two-stroke gasoline engine. The vehicle used the in-house NAAVIK autopilot for stabilization and position hold during flight testing.",
+    experimentVideos: [
+      { label: "Preliminary tandem rotor UAV flight test", href: "https://www.youtube.com/watch?v=HKyiRecqXpM" },
+    ],
+    paperLinks: [],
+    relatedLinks: [],
+  },
+  {
+    title: "Payload Delivery System for Autonomous RUAV",
+    area: "Aerial logistics",
+    authors: ["Helicopter and VTOL Laboratory"],
+    phase: "completed",
+    status: "Autonomous payload delivery mechanism",
+    image: "/assets/images/projects/ruav-payload-delivery.jpg",
+    summary:
+      "A payload and package delivery mechanism developed for the lab's autonomous RUAV platform.",
+    details:
+      "The lab developed a payload and package delivery system for aerial logistics using the autonomous RUAV platform. The demonstration shows the mechanism releasing a package during flight.",
+    experimentVideos: [
+      { label: "Payload delivery mechanism demonstration", href: "https://www.youtube.com/watch?v=AQgIwjmS3D0" },
+    ],
+    paperLinks: [],
+    relatedLinks: [],
+  },
+  {
+    title: "Aggressive Attitude Tracking and Autonomous Inverted Flight",
+    area: "Rotorcraft control",
+    authors: ["Mangal Kothari", "Abhishek", "Ravi Banavar"],
+    phase: "completed",
+    status: "Autonomous inverted helicopter flight",
+    image: "/assets/images/projects/autonomous-inverted-flight.jpg",
+    summary:
+      "A rotorcraft control demonstration for aggressive attitude tracking, helicopter flipping, and autonomous inverted flight.",
+    details:
+      "This work demonstrated aggressive attitude tracking for flipping a helicopter and achieving autonomous inverted flight. The work was a joint effort between IIT Kanpur and IIT Bombay collaborators.",
+    experimentVideos: [
+      { label: "Autonomous inverted flight demonstration", href: "https://www.youtube.com/watch?v=1zz71W__RNA" },
+    ],
+    paperLinks: [],
+    relatedLinks: [],
+  },
+  {
+    title: "Autonomous Autorotation Using NAAVIK Autopilot",
+    area: "Autonomous helicopter safety",
+    authors: ["Helicopter and VTOL Laboratory"],
+    phase: "completed",
+    status: "Emergency landing mode for unmanned helicopters",
+    image: "/assets/images/projects/naavik-autonomous-autorotation.jpg",
+    summary:
+      "An autonomous autorotation capability added to the NAAVIK autopilot for unmanned helicopter emergency landing.",
+    details:
+      "NAAVIK autopilot was enhanced to enable autonomous autorotation for an unmanned helicopter. The project used a simpler autorotation approach intended for safe landing after engine, transmission, or tail-rotor failure.",
+    experimentVideos: [
+      { label: "Autonomous autorotation demonstration", href: "https://www.youtube.com/watch?v=OduviuUKxu0" },
+    ],
+    paperLinks: [],
+    relatedLinks: [],
+  },
+  {
+    title: "High Efficiency Dissimilar Coaxial Rotor Concept",
+    area: "Rotorcraft concept",
+    authors: ["Helicopter and VTOL Laboratory"],
+    phase: "completed",
+    status: "Reduced rotor-rotor interaction concept",
+    image: "/assets/images/projects/dissimilar-coaxial-rotor.jpg",
+    summary:
+      "A dissimilar coaxial rotor concept studied as a lower-power anti-torque alternative for hovering rotorcraft.",
+    details:
+      "This work studied a dissimilar coaxial rotor arrangement intended to reduce rotor-rotor aerodynamic interaction. The concept uses a reduced-RPM anti-torque rotor and was predicted to reduce power demand compared with conventional single main rotor-tail rotor and regular coaxial configurations in hover.",
     experimentVideos: [],
     paperLinks: [],
     relatedLinks: [],
@@ -239,6 +307,38 @@ const baseResearchProjects = [
     relatedLinks: [],
   },
   {
+    title: "Design and Developement of Mini Compound Rotary Wing Unmanned Aerial Vehicle (CRUAV)",
+    area: "Compound rotary wing UAV",
+    authors: ["Helicopter and VTOL Laboratory"],
+    phase: "completed",
+    status: "Model-scale compound RUAV design",
+    image: "/assets/images/projects/compound-ruav.png",
+    summary:
+      "A model-scale compound helicopter RUAV design effort supported by rotorcraft dynamics and performance analysis.",
+    details:
+      "This project focused on designing and developing a 10 kg class compound helicopter RUAV. The work included rotorcraft dynamics formulation, baseline design studies, performance prediction, and evaluation of wing, propeller, and horizontal stabilizer effects in compound RUAV trim analysis.",
+    experimentVideos: [],
+    paperLinks: [],
+    relatedLinks: [],
+  },
+  {
+    title: "Remote Controlled Boomerang",
+    area: "Unconventional flight vehicles",
+    authors: ["Helicopter and VTOL Laboratory"],
+    phase: "completed",
+    status: "Pilot-controlled circular flight vehicle",
+    image: "/assets/images/projects/remote-controlled-boomerang.jpg",
+    summary:
+      "A remote-controlled boomerang concept designed for inherently stable circular flight without autopilot support.",
+    details:
+      "The lab developed a remote-controlled boomerang that is inherently stable in hover and flies circular paths of controllable radius under pilot input. Follow-on work targeted a flight dynamics model for deeper understanding of the concept.",
+    experimentVideos: [
+      { label: "Remote controlled boomerang video", href: "https://www.youtube.com/watch?v=86dJ-izn2iM" },
+    ],
+    paperLinks: [],
+    relatedLinks: [],
+  },
+  {
     title: "Biplane Quadrotor Tailsitter",
     area: "Payload delivery UAV",
     authors: ["Helicopter and VTOL Laboratory"],
@@ -248,8 +348,48 @@ const baseResearchProjects = [
     summary:
       "A VTOL airplane concept combining variable-pitch quadrotor agility with compact biplane fixed wings for efficient cruise.",
     details:
-      "The biplane tailsitter concept combines vertical takeoff capability with fixed-wing cruise efficiency for payload delivery.",
-    experimentVideos: [],
+      "The biplane tailsitter concept combines the speed and endurance of a fixed-wing UAV with the VTOL and hovering capability of a variable-pitch quadrotor. The design uses an H-shaped quadrotor frame with fixed wings in biplane configuration for compact size, cruise efficiency, and payload delivery.",
+    experimentVideos: [
+      { label: "Biplane tailsitter flight test", href: "https://www.youtube.com/watch?v=r80l2pN_MbI" },
+      { label: "Swiveling biplane tailsitter UAV", href: "https://www.youtube.com/watch?v=MjGfSMEPUGE" },
+    ],
+    paperLinks: [],
+    relatedLinks: [],
+  },
+  {
+    title: "Flybarless Coaxial Helicopter Active Stabilization",
+    area: "Micro air vehicles",
+    authors: ["Helicopter and VTOL Laboratory"],
+    phase: "completed",
+    status: "Onboard-sensor active stabilization",
+    image: "/assets/images/projects/flybarless-coaxial-active-stabilization.jpg",
+    summary:
+      "A flybarless coaxial helicopter platform stabilized actively using onboard sensors for improved agility.",
+    details:
+      "This work removed the passive-stability flybar from a coaxial helicopter, making the vehicle unstable but more agile. Active stabilization was then achieved using onboard sensors.",
+    experimentVideos: [
+      { label: "Flybarless coaxial active stabilization", href: "https://www.youtube.com/watch?v=r5x_PsOTAhU" },
+    ],
+    paperLinks: [],
+    relatedLinks: [],
+  },
+  {
+    title: "Coaxial MAV Obstacle Avoidance Using Microsoft Kinect Sensor",
+    area: "Autonomous MAV navigation",
+    authors: ["Helicopter and VTOL Laboratory"],
+    phase: "completed",
+    status: "Realtime obstacle detection and avoidance",
+    image: "/assets/images/projects/kinect-obstacle-avoidance.png",
+    summary:
+      "A coaxial Micro Air Vehicle test platform using Microsoft Kinect sensing for realtime obstacle detection and avoidance.",
+    details:
+      "The test flight demonstrated a coaxial Micro Air Vehicle using a Microsoft Kinect sensor for realtime obstacle detection and avoidance in constrained indoor environments.",
+    experimentVideos: [
+      {
+        label: "Obstacle-avoidance flight test",
+        href: "/assets/videos/kinect-obstacle-avoidance-flight.flv",
+      },
+    ],
     paperLinks: [],
     relatedLinks: [],
   },
