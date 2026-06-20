@@ -1,3 +1,4 @@
+import { generatedCurrentPeopleGroups } from "./generatedPeople.js";
 import { generatedResearchProjects } from "./generatedResearchProjects.js";
 
 export const profile = {
@@ -478,38 +479,7 @@ export const teachingCourses = [
   },
 ];
 
-export const currentPeopleGroups = [
-  {
-    group: "PhD",
-    members: [],
-  },
-  {
-    group: "MTech",
-    members: [],
-  },
-  {
-    group: "Undergraduate and BT-MT",
-    members: [
-      {
-        name: "Ritwik Shankar",
-        year: "Y21 BT-MT",
-        image: "/assets/images/people/ritwik-shankar.jpg",
-        shortBio:
-          "UG @ IIT Kanpur and visiting student @ Caltech, interested in control optimisation, vision-based methods and Reinforcement Learning for aerial robotics.",
-        researchKeywords: ["Controls", "Reinforcement Learning"],
-        contacts: {
-          email: "ritwikshankar03@gmail.com",
-          linkedin: "https://www.linkedin.com/in/s-ritwik/",
-          homepage: "https://s-ritwik.github.io/homepage/",
-        },
-      },
-    ],
-  },
-  {
-    group: "Research Assistant",
-    members: [],
-  },
-];
+export const currentPeopleGroups = generatedCurrentPeopleGroups;
 
 export const calendarEvents = [
   {
