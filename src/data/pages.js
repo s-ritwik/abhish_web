@@ -18,7 +18,7 @@ export const pages = [
   },
   {
     slug: "people",
-    label: "People",
+    label: "Members",
     source: "react",
     summary: "Current students and alumni organized in the original group order.",
     navChildren: [

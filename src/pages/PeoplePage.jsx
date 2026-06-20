@@ -267,12 +267,7 @@ export default function PeoplePage() {
   return (
     <div className="page-stack">
       <section className="page-hero compact">
-        <p className="section-eyebrow">People</p>
-        <h1>People</h1>
-        <p>
-          Current group members and alumni from the IIT Kanpur Helicopter and VTOL
-          Laboratory pages.
-        </p>
+        <h1>Members</h1>
       </section>
 
       {currentPeopleGroups.map((group) => (
