@@ -222,6 +222,30 @@ function CurrentPeopleSection({ group, onOpen }) {
   );
 }
 
+function TraineeEntry({ person }) {
+  if (typeof person === "string") {
+    return person;
+  }
+
+  return (
+    <span className="trainee-person">
+      <span>
+        {person.name}, {person.college}
+      </span>
+      {person.email ? (
+        <a
+          className="trainee-email-link"
+          href={emailHref(person.email)}
+          aria-label={`Email ${person.name}`}
+          title={person.email}
+        >
+          <ContactIcon type="email" />
+        </a>
+      ) : null}
+    </span>
+  );
+}
+
 export default function PeoplePage() {
   const [selectedPerson, setSelectedPerson] = useState(null);
   const phdRows = phdAlumni.map((person) => ({
@@ -263,7 +287,9 @@ export default function PeoplePage() {
               <h3>{group.year}</h3>
               <ul className="clean-list">
                 {group.people.map((person) => (
-                  <li key={person}>{person}</li>
+                  <li key={typeof person === "string" ? person : `${person.name}-${person.email}`}>
+                    <TraineeEntry person={person} />
+                  </li>
                 ))}
               </ul>
             </article>

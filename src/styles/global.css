@@ -900,6 +900,44 @@ button {
   padding: 18px;
 }
 
+.trainee-person {
+  align-items: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.trainee-email-link {
+  align-items: center;
+  border: 1px solid rgba(29, 103, 89, 0.24);
+  border-radius: 999px;
+  color: #1d6759;
+  display: inline-grid;
+  flex: 0 0 auto;
+  height: 28px;
+  justify-items: center;
+  place-items: center;
+  text-decoration: none;
+  width: 28px;
+}
+
+.trainee-email-link:hover,
+.trainee-email-link:focus-visible {
+  background: #edf2ed;
+  border-color: rgba(29, 103, 89, 0.52);
+  outline: none;
+}
+
+.trainee-email-link svg {
+  fill: none;
+  height: 15px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.9;
+  width: 15px;
+}
+
 .empty-value {
   color: #768078;
 }

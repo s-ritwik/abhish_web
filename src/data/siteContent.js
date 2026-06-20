@@ -635,6 +635,51 @@ export const degreeAlumni = [
 
 export const summerTrainees = [
   {
+    year: "2026",
+    people: [
+      {
+        name: "Chitrani Banerjee",
+        college: "Banasthali Vidyapith",
+        email: "chitranibanerjee8405@gmail.com",
+      },
+      {
+        name: "Pradeep Bishnoi",
+        college: "IIT Kanpur",
+        email: "pradeep24@iitk.ac.in",
+      },
+      {
+        name: "Ayush Kumar Singh",
+        college: "Indian Institute of Technology",
+        email: "ayushkumars139@gmail.com",
+      },
+      {
+        name: "Prisha Bansal",
+        college: "NFSU, Delhi",
+        email: "prishabansal11@gmail.com",
+      },
+      {
+        name: "Rajvardhan Beniwal",
+        college: "IIT Kanpur",
+        email: "rajvardhan24@iitk.ac.in",
+      },
+      {
+        name: "Amogh Agarwal",
+        college: "SVNIT Surat",
+        email: "amoghagarwals26@gmail.com",
+      },
+      {
+        name: "Bala Rohit",
+        college: "IIT Kanpur",
+        email: "balar24@iitk.ac.in",
+      },
+      {
+        name: "Harshwardha Giri Goswami",
+        college: "IIT Kanpur",
+        email: "hgiri24@iitk.ac.in",
+      },
+    ],
+  },
+  {
     year: "2014",
     people: [
       "Suresh Sharma, Amrita School of Engineering, Amrita Vishwavidyapeetham",
